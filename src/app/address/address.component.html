@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row justify-content">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2 col-sm-offset-1">
+      <div class="card mt-3 px-2 d-flex">
+        <div class="card-body">
+          <h4 class="text-align">Edit Address</h4>
+          <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" formControlName="name">
+              <span class="alert text-danger"
+                *ngIf="!addressForm.get('name')?.valid && addressForm.get('name')?.touched">
+                Name is Required
+              </span>
+            </div>
+
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input type="address" class="form-control" formControlName="address">
+              <span class="alert text-danger"
+                *ngIf="!addressForm.get('address')?.valid && addressForm.get('address')?.touched">
+                Address is Required
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" formControlName="email">
+              <span class="alert text-danger"
+                *ngIf="!addressForm.get('email')?.valid && addressForm.get('email')?.touched">
+                Email is Required
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="number" class="form-control" formControlName="phone">
+              <span class="alert text-danger"
+                *ngIf="!addressForm.get('phone')?.valid && addressForm.get('phone')?.touched">
+                Phone Number is Required
+              </span>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

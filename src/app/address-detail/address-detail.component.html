@@ -1,0 +1,19 @@
+<div class="container">
+      <h4 class="text-align mt-3">Address List</h4>
+      <div class="row">
+            <div class="col-4" *ngFor="let data of address">
+                  <div class="card mt-3 px-2 ">
+                        <div class="card-body">
+                              <h5 class="card-title">{{data.name}}</h5>
+                              <h6 class="card-subtitle mb-2 text-muted">{{data.address}}</h6>
+                              <h5 class="card-text">{{data.email}}</h5>
+                              <p class="card-text">{{data.phone}}</p>
+                              <button type="button" class="btn btn-primary float-right"
+                                    (click)="editForm(data)">Edit</button>
+                              <button type="button" class="btn btn-danger float-left"
+                                    (click)="deleteForm(data)">Delete</button>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
